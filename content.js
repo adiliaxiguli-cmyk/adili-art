@@ -1,0 +1,29 @@
+// 作品标题为展览暂题，可随画家本人的命名与创作资料逐步修订。
+window.PORTFOLIO = {
+  name: "阿迪力·热西提",
+  introduction: "从人物的一瞥，到一只苹果的光影，画笔留住那些值得凝视的瞬间。",
+  biography: "阿迪力·热西提，维吾尔族，1977年生于新疆昌吉州奇台县。从小喜欢画画，长大后也始终没有放下画笔。从儿时的兴趣到多年的坚持，绘画渐渐成为他表达所见所感的方式。这里收录他的作品，也记录这段与线条、光影相伴的旅程。",
+  works: [
+    { title: "侧望", image: "images/6659936b541b3d115f7381fca63c68e4.jpg", year: "2026", medium: "人物素描", description: "近距离的面容占满纸面。浓密的发丝与柔和的面部灰调相映，微微侧转的目光让肖像有了未说出口的情绪。", alt: "女子侧脸与目光的黑白铅笔肖像" },
+    { title: "凝视", image: "images/13526ba18194771aa6874015e80014d2.jpg", year: "2026", medium: "人物素描", description: "画家用密集的笔触铺陈发丝，把视线留给眼睛。正面与侧面的微妙交错，使人物的神情显得沉静而坚定。", alt: "长发女子凝视前方的黑白铅笔肖像" },
+    { title: "微笑的女孩", image: "images/eeb050ff6d538d8bbc9a16f80e2d8464.jpg", year: "2026", medium: "人物素描", description: "齐刘海与清亮的眼睛构成一张安静的面孔。轻柔的明暗过渡托起嘴角的笑意，留下明净、亲切的瞬间。", alt: "齐刘海女孩微笑的铅笔肖像" },
+    { title: "眼睛习作之一", image: "images/c878abb5e5bdfc4d35f36e7e6e2e5d0d.jpg", year: "2026", medium: "局部习作", description: "只描绘一只眼睛，却细致区分了眉骨、眼睑与瞳孔的层次。留白让视线更集中，也让铅笔的轻重变化清晰可见。", alt: "一只眼睛及眉毛的铅笔局部习作" },
+    { title: "唇的明暗", image: "images/4b277bacc37199533c77644e0a838039.jpg", year: "2025", medium: "局部习作", description: "从唇线到下颌的阴影，短促的排线逐渐塑出柔软的体积。日常所见的细节，在反复观察中成为独立的画面。", alt: "嘴唇与周围明暗的铅笔局部习作" },
+    { title: "耳的结构", image: "images/218f39e9f5ca0ac2dfc803af355ab0c6.jpg", year: "2026", medium: "局部习作", description: "曲折的耳廓在深浅交替的线条里渐次显现。作品把注意力放在结构与转折上，呈现出耐心观察的痕迹。", alt: "耳朵结构的黑白铅笔习作" },
+    { title: "眼睛习作之二", image: "images/f14e0140b3acdf827a70d7ec65ff7a7a.jpg", year: "2026", medium: "局部习作", description: "睫毛向外舒展，瞳孔里的亮点使整幅画有了呼吸。利落的线条与柔和的眼周阴影，捕捉到目光的神采。", alt: "带有睫毛与高光的眼睛铅笔习作" },
+    { title: "苹果习作之一", image: "images/b420b856b4f0f8b6b9f7ca243bf0d08a.jpg", year: "2026", medium: "静物素描", description: "一枚苹果置于纸面中央。环绕的笔触与清晰的投影，让果实的圆润、重量和光线方向变得可感。", alt: "一枚苹果的铅笔静物素描" },
+    { title: "甜椒", image: "images/ab455612550e8006449bd2fb1e2b4322.jpg", year: "2026", medium: "静物素描", description: "果柄向上延伸，起伏的椒身在宽阔的留白里显得格外饱满。细密排线沿着形体转折，将一件寻常静物画得沉稳有力。", alt: "一只甜椒及其投影的铅笔素描" },
+    { title: "苹果习作之二", image: "images/41693134cd5061d2700430dc81b77684.jpg", year: "2026", medium: "静物素描", description: "明亮的果肩与深色的底部形成鲜明对照。层层叠加的线条不仅塑造体积，也留下了作画的节奏。", alt: "明暗对比鲜明的苹果铅笔素描" },
+    { title: "一盘苹果", image: "images/c1dc2b1cc46cd2c9052414e4055154fd.jpg", year: "2026", medium: "静物素描", wide: true, description: "六枚苹果聚在浅盘中，彼此遮挡又相互映衬。不同的亮面与暗部，让朴素的摆放呈现出丰富的空间层次。", alt: "盘中六枚苹果的黑白静物素描" },
+    { title: "女儿的妈妈", image: "images/3fbafb36cbb7b6d4b96027f1b2fa5d8d.jpg", year: "2026", medium: "人物素描", description: "画面题字写着“女儿的妈妈”。温和的目光与细致描画的发丝，让这张肖像既是一幅人物画，也是一份亲近的注视。", alt: "题有女儿的妈妈字样的女性铅笔肖像" },
+    { title: "短发女孩", image: "images/4bb3190f999bda311b7c003a89a23c60.jpg", year: "2026", medium: "人物素描", description: "整齐的短发与围巾勾出清楚的轮廓。面部的浅灰调和衣物的深色块相互平衡，衬出女孩平静的神情。", alt: "短发并围围巾的女孩铅笔肖像" },
+    { title: "背影", image: "images/5ee64e10678392574584e39bb901c9f0.jpg", year: "2025", medium: "人物习作", description: "没有正面的表情，发辫与肩线便成为叙事的中心。连续的高光顺着发丝流动，使一幅背影有了轻盈的韵律。", alt: "女子盘发与背影的铅笔习作" },
+    { title: "鸡蛋", image: "images/35ddb2d8538e3cd1092f5c40b18d119a.jpg", year: "2026", medium: "静物素描", description: "最简单的形体，也需要最仔细的观察。光从一侧落下，明暗沿着蛋壳缓缓过渡，地面的投影为它定下位置。", alt: "一枚鸡蛋与投影的铅笔静物素描" },
+    { title: "果实习作", image: "images/ce6587885c2f131d9d8de4d10167223e.jpg", year: "2026", medium: "静物素描", description: "果实表面的凹凸与高光被逐一记录。暗部层层压深，衬出表皮柔和的转折，也让静物仿佛带着触感。", alt: "一枚圆形果实的铅笔静物素描" },
+    { title: "笑容", image: "images/3b3cdeabb4755ba25f310f100a725002.jpg", year: "2026", medium: "人物素描", description: "扬起的嘴角、眼角的细纹和散落的发丝共同组成鲜活的表情。比起姿态，画家更想留住这一刻的笑意。", alt: "展露笑容的女子铅笔肖像" },
+    { title: "回望", image: "images/482599118a63d0fa8a292942eadba8c1.jpg", year: "2026", medium: "人物素描", description: "卷曲的发丝围绕着面容，人物的目光平静地望向画外。深色头发与浅色肌肤交错，带出富有层次的肖像构图。", alt: "卷发女子回望的铅笔肖像" },
+    { title: "一碗馄饨", image: "images/40a851ebf0a91e9961463a5f4a39a2eb.jpg", year: "2026", medium: "生活静物", wide: true, description: "碗沿、汤面和层叠的馄饨，被细细收入画纸。熟悉的食物成为描绘的主角，让作品多了一份贴近日常生活的温度。", alt: "一碗馄饨的铅笔静物画" },
+    { title: "球体习作", image: "images/d9d6241ed8a659a3bf23fd4ad564517d.jpg", year: "2026", medium: "明暗习作", description: "光在球面上缓缓移动，亮部、灰面与深影连成完整的体积。这幅简洁的习作，把观察光线的过程清楚留在纸上。", alt: "球体与投影的铅笔明暗习作" },
+    { title: "盘中双果", image: "images/01dd45831034c91d7d0b4907ac0fe4ae.jpg", year: "2026", medium: "静物素描", wide: true, description: "两枚圆果并置于碗中，形体相近，受光却各不相同。碗沿的弧线收拢画面，使视线自然回到静物之间。", alt: "碗中两枚圆果的铅笔静物素描" }
+  ]
+};
