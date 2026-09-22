@@ -144,7 +144,9 @@
       gallery.replaceChildren();gallery.dir=language==='ug'?'rtl':'ltr';
       if(!works.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=language==='ug'?'ئەسەرلەر پات يېقىندا كۆرگەزمە قىلىنىدۇ.':'作品即将在这里展出。';gallery.append(empty);return;}
       works.forEach((base,index)=>{const work=localizedWork(index);const c=copy[language];
-        const card=document.createElement('button');card.className=base.wide?'work-card wide':'work-card';card.type='button';card.setAttribute('aria-label',c.view(work.title));
+        const card=document.createElement('button');card.className=base.wide?'work-card wide':'work-card';
+        if(document.documentElement.classList.contains('motion-ready'))card.classList.add('is-visible');
+        card.type='button';card.setAttribute('aria-label',c.view(work.title));
         const frame=document.createElement('span');frame.className='work-image';
         const img=document.createElement('img');img.src=base.image;img.alt=language==='ug'?work.title:(work.alt||base.alt||work.title);img.loading=index<3?'eager':'lazy';img.decoding='async';frame.append(img);
         const info=document.createElement('span');info.className='work-info';const title=document.createElement('span');title.className='work-title';title.textContent=work.title;
