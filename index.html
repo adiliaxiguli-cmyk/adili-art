@@ -86,13 +86,13 @@
 <body>
   <div class="reading-line" id="reading-line" aria-hidden="true"></div>
   <div class="shell">
-    <header class="topbar"><a class="brand" href="#top" id="brand">阿迪力·热西提</a><nav class="nav" aria-label="主导航"><a href="#works">作品</a><a href="#about" id="about-link">关于</a></nav></header>
+    <header class="topbar"><a class="brand" href="#top" id="brand">阿迪力·热西提</a><nav class="nav" id="main-nav" aria-label="主导航"><a href="#works" id="works-link">作品</a><a href="#about" id="about-link">关于</a></nav></header>
     <main id="top">
-      <section class="intro" aria-labelledby="site-title"><div class="hero-art" aria-hidden="true"><span class="art-field"></span><span class="art-outline"></span><span class="art-frame"></span><span class="art-index">NO. 001</span><span class="art-rule"></span><span class="hero-art-label">ADILI / ART PORTFOLIO</span></div><div class="intro-main"><p class="eyebrow">Selected Works · 阿迪力·热西提</p><h1 id="site-title"><span class="hero-line"><span>一个梦想家的</span></span><span class="hero-line"><span>作品集</span></span></h1><a class="intro-link" href="#works">走进作品 <span aria-hidden="true">→</span></a></div><div class="intro-aside"><p class="aside-index">ARTIST / 001</p><p id="intro-text">阿迪力·热西提的绘画作品。请放慢脚步，看见画面里的色彩与故事。</p></div></section>
-      <section class="about" id="about" aria-labelledby="about-title"><div class="about-copy" id="about-copy"><p class="about-kicker" id="about-kicker">THE ARTIST / 画家</p><h2 id="about-title">关于画家</h2><div class="bio-switch" role="group" aria-label="个人简介语言"><button type="button" id="bio-zh" aria-pressed="true">中文</button><button type="button" id="bio-ug" aria-pressed="false" lang="ug" dir="rtl">ئۇيغۇرچە</button></div><p id="artist-bio"></p></div><div class="about-media" aria-label="画家照片"><figure class="about-photo about-photo-portrait"><img src="images/artist-portrait.jpg" alt="阿迪力·热西提的正面肖像" width="1280" height="1412" loading="lazy"><figcaption>阿迪力·热西提</figcaption></figure><figure class="about-photo about-photo-work"><img src="images/artist-at-work.jpg" alt="阿迪力·热西提坐在画架前作画" width="1280" height="2011" loading="lazy"><figcaption>创作时刻</figcaption></figure></div></section>
-      <section id="works" aria-labelledby="works-title"><div class="section-heading"><h2 id="works-title">作品</h2><span class="count" id="work-count">0 幅</span></div><p class="works-note">每一幅都是独立作品。标题与文字为作品集展示暂拟，可随画家的原题和资料更新。</p><div class="gallery" id="gallery"></div></section>
+      <section class="intro" aria-labelledby="site-title"><div class="hero-art" aria-hidden="true"><span class="art-field"></span><span class="art-outline"></span><span class="art-frame"></span><span class="art-index">NO. 001</span><span class="art-rule"></span><span class="hero-art-label">ADILI / ART PORTFOLIO</span></div><div class="intro-main"><p class="eyebrow" id="eyebrow">Selected Works · 阿迪力·热西提</p><h1 id="site-title"><span class="hero-line"><span id="title-line-1">一个梦想家的</span></span><span class="hero-line"><span id="title-line-2">作品集</span></span></h1><a class="intro-link" href="#works"><span id="enter-text">走进作品</span> <span aria-hidden="true">→</span></a></div><div class="intro-aside"><p class="aside-index">ARTIST / 001</p><p id="intro-text">阿迪力·热西提的绘画作品。请放慢脚步，看见画面里的色彩与故事。</p></div></section>
+      <section class="about" id="about" aria-labelledby="about-title"><div class="about-copy" id="about-copy"><p class="about-kicker" id="about-kicker">THE ARTIST / 画家</p><h2 id="about-title">关于画家</h2><div class="bio-switch" id="language-switch" role="group" aria-label="页面语言"><button type="button" id="bio-zh" aria-pressed="true">中文</button><button type="button" id="bio-ug" aria-pressed="false" lang="ug" dir="rtl">ئۇيغۇرچە</button></div><p id="artist-bio"></p></div><div class="about-media" id="about-media" aria-label="画家照片"><figure class="about-photo about-photo-portrait"><img id="portrait-img" src="images/artist-portrait.jpg" alt="阿迪力·热西提的正面肖像" width="1280" height="1412" loading="lazy"><figcaption id="portrait-caption">阿迪力·热西提</figcaption></figure><figure class="about-photo about-photo-work"><img id="work-photo-img" src="images/artist-at-work.jpg" alt="阿迪力·热西提坐在画架前作画" width="1280" height="2011" loading="lazy"><figcaption id="work-photo-caption">创作时刻</figcaption></figure></div></section>
+      <section id="works" aria-labelledby="works-title"><div class="section-heading"><h2 id="works-title">作品</h2><span class="count" id="work-count">0 幅</span></div><p class="works-note" id="works-note">每一幅都是独立作品。标题与文字为作品集展示暂拟，可随画家的原题和资料更新。</p><div class="gallery" id="gallery"></div></section>
     </main>
-    <footer class="footer"><span id="copyright">© 阿迪力·热西提</span><span>一个梦想家的作品集</span></footer>
+    <footer class="footer"><span id="copyright">© 阿迪力·热西提</span><span id="footer-title">一个梦想家的作品集</span></footer>
   </div>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="查看作品大图" aria-hidden="true">
     <div class="lightbox-top"><span id="lightbox-number"></span><button id="close" aria-label="关闭大图">×</button></div>
@@ -103,36 +103,63 @@
   <script>
     const artist=window.PORTFOLIO||{};
     const works=Array.isArray(artist.works)?artist.works.filter(w=>w.image&&w.title):[];
+    const worksUyghur=Array.isArray(artist.worksUyghur)?artist.worksUyghur:[];
     const $=id=>document.getElementById(id);
-    if(artist.name){$('brand').textContent=artist.name;$('copyright').textContent=`© ${artist.name}`;document.title=`${artist.name} · 作品集`;}
-    if(artist.introduction)$('intro-text').textContent=artist.introduction;
     const biographies={zh:artist.biography||'',ug:artist.biographyUyghur||''};
-    function setBioLanguage(language){
+    let language='zh',current=0,lastFocus=null;
+    const copy={
+      zh:{works:'作品',about:'关于',line1:'一个梦想家的',line2:'作品集',enter:'走进作品',aboutKicker:'THE ARTIST / 画家',aboutTitle:'关于画家',count:n=>`${n} 幅`,note:'每一幅都是独立作品。标题与文字为作品集展示暂拟，可随画家的原题和资料更新。',portrait:'阿迪力·热西提',moment:'创作时刻',footer:'一个梦想家的作品集',close:'关闭大图',prev:'上一幅',next:'下一幅',view:t=>`查看作品：${t}`,portraitAlt:'阿迪力·热西提的正面肖像',workAlt:'阿迪力·热西提坐在画架前作画'},
+      ug:{works:'ئەسەرلەر',about:'رەسسام ھەققىدە',line1:'بىر ئارمانپەرەسنىڭ',line2:'ئەسەرلەر توپلىمى',enter:'ئەسەرلەرنى كۆرۈش',aboutKicker:'THE ARTIST / رەسسام',aboutTitle:'رەسسام ھەققىدە',count:n=>`${n} پارچە`,note:'ھەر بىر رەسىم مۇستەقىل ئەسەر. ماۋزۇ ۋە چۈشەندۈرۈشلەر كۆرگەزمە ئۈچۈن ۋاقىتلىق بېكىتىلگەن بولۇپ، رەسسامنىڭ ئەسلىي ماتېرىيالىغا ئاساسەن يېڭىلىنىدۇ.',portrait:'ئادىل رىشىت',moment:'ئىجادىيەت دەقىقىسى',footer:'بىر ئارمانپەرەسنىڭ ئەسەرلەر توپلىمى',close:'چوڭ رەسىمنى تاقاش',prev:'ئالدىنقى ئەسەر',next:'كېيىنكى ئەسەر',view:t=>`ئەسەرنى كۆرۈش: ${t}`,portraitAlt:'ئادىل رىشىتنىڭ رەسمىي سۈرىتى',workAlt:'ئادىل رىشىت رەسىم سىزىۋاتقان كۆرۈنۈش'}
+    };
+    function localizedWork(index){return language==='ug'?{...works[index],...(worksUyghur[index]||{})}:works[index];}
+    function setLanguage(nextLanguage){
+      language=nextLanguage==='ug'?'ug':'zh';
       const isUyghur=language==='ug'&&biographies.ug;
+      const c=copy[isUyghur?'ug':'zh'];
+      document.documentElement.lang=isUyghur?'ug':'zh-CN';
+      document.documentElement.dir=isUyghur?'rtl':'ltr';
+      $('brand').textContent=isUyghur?(artist.nameUyghur||artist.name):artist.name;
+      $('works-link').textContent=c.works;$('about-link').textContent=c.about;
+      $('main-nav').setAttribute('aria-label',isUyghur?'ئاساسلىق يولباشچى':'主导航');
+      $('eyebrow').textContent=`Selected Works · ${isUyghur?(artist.nameUyghur||artist.name):artist.name}`;
+      $('title-line-1').textContent=c.line1;$('title-line-2').textContent=c.line2;$('enter-text').textContent=c.enter;
+      $('intro-text').textContent=isUyghur?(artist.introductionUyghur||artist.introduction):artist.introduction;
       $('artist-bio').textContent=isUyghur?biographies.ug:biographies.zh;
       $('artist-bio').lang=isUyghur?'ug':'zh-CN';$('artist-bio').dir=isUyghur?'rtl':'ltr';
-      $('about-title').textContent=isUyghur?'رەسسام ھەققىدە':'关于画家';
-      $('about-kicker').textContent=isUyghur?'THE ARTIST / رەسسام':'THE ARTIST / 画家';
+      $('about-title').textContent=c.aboutTitle;$('about-kicker').textContent=c.aboutKicker;
       $('about-copy').classList.toggle('is-uyghur',Boolean(isUyghur));
       $('bio-zh').setAttribute('aria-pressed',String(!isUyghur));$('bio-ug').setAttribute('aria-pressed',String(Boolean(isUyghur)));
+      $('language-switch').setAttribute('aria-label',isUyghur?'بەت تىلى':'页面语言');$('lightbox').setAttribute('aria-label',isUyghur?'ئەسەرنىڭ چوڭ سۈرىتى':'查看作品大图');
+      $('about-media').setAttribute('aria-label',isUyghur?'رەسسامنىڭ سۈرەتلىرى':'画家照片');
+      $('portrait-img').alt=c.portraitAlt;$('work-photo-img').alt=c.workAlt;$('portrait-caption').textContent=c.portrait;$('work-photo-caption').textContent=c.moment;
+      $('works-title').textContent=c.works;$('work-count').textContent=c.count(works.length);$('works-note').textContent=c.note;
+      $('copyright').textContent=`© ${isUyghur?(artist.nameUyghur||artist.name):artist.name}`;$('footer-title').textContent=c.footer;
+      $('close').setAttribute('aria-label',c.close);$('prev').setAttribute('aria-label',c.prev);$('next').setAttribute('aria-label',c.next);
+      document.title=`${isUyghur?(artist.nameUyghur||artist.name):artist.name} · ${c.footer}`;
+      renderGallery();
+      if(lightbox.hasAttribute('open'))showWork(current);
     }
-    if(biographies.zh||biographies.ug){setBioLanguage(biographies.zh?'zh':'ug');$('bio-zh').addEventListener('click',()=>setBioLanguage('zh'));$('bio-ug').addEventListener('click',()=>setBioLanguage('ug'));if(!biographies.zh)$('bio-zh').hidden=true;if(!biographies.ug)$('bio-ug').hidden=true;}else{$('about').hidden=true;$('about-link').hidden=true;}
-    $('work-count').textContent=`${works.length} 幅`;
     const gallery=$('gallery');
-    if(!works.length){const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<div><span>作品即将在这里展出</span>阿迪力·热西提的画作，即将呈现。</div>';gallery.append(empty);}
-    works.forEach((work,index)=>{
-      const card=document.createElement('button');card.className=work.wide?'work-card wide':'work-card';card.type='button';card.setAttribute('aria-label',`查看作品：${work.title}`);
-      const frame=document.createElement('span');frame.className='work-image';
-      const img=document.createElement('img');img.src=work.image;img.alt=work.alt||work.title;img.loading=index<3?'eager':'lazy';img.decoding='async';frame.append(img);
-      const info=document.createElement('span');info.className='work-info';
-      const title=document.createElement('span');title.className='work-title';title.textContent=work.title;
-      const meta=document.createElement('span');meta.className='work-meta';meta.textContent=[work.year,work.medium].filter(Boolean).join(' · ');
-      info.append(title,meta);card.append(frame,info);
-      if(work.description){const description=document.createElement('span');description.className='work-description';description.textContent=work.description;card.append(description);}
-      card.addEventListener('click',()=>openWork(index));gallery.append(card);
-    });
-    let current=0,lastFocus=null;const lightbox=$('lightbox');
-    function showWork(index){current=(index+works.length)%works.length;const w=works[current];$('lightbox-number').textContent=`${current+1} / ${works.length}`;$('lightbox-img').src=w.image;$('lightbox-img').alt=w.alt||w.title;$('lightbox-title').textContent=w.title;$('lightbox-detail').textContent=[w.year,w.medium,w.size,w.description].filter(Boolean).join(' · ');}
+    function renderGallery(){
+      gallery.replaceChildren();gallery.dir=language==='ug'?'rtl':'ltr';
+      if(!works.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=language==='ug'?'ئەسەرلەر پات يېقىندا كۆرگەزمە قىلىنىدۇ.':'作品即将在这里展出。';gallery.append(empty);return;}
+      works.forEach((base,index)=>{const work=localizedWork(index);const c=copy[language];
+        const card=document.createElement('button');card.className=base.wide?'work-card wide':'work-card';card.type='button';card.setAttribute('aria-label',c.view(work.title));
+        const frame=document.createElement('span');frame.className='work-image';
+        const img=document.createElement('img');img.src=base.image;img.alt=language==='ug'?work.title:(work.alt||base.alt||work.title);img.loading=index<3?'eager':'lazy';img.decoding='async';frame.append(img);
+        const info=document.createElement('span');info.className='work-info';const title=document.createElement('span');title.className='work-title';title.textContent=work.title;
+        const meta=document.createElement('span');meta.className='work-meta';meta.textContent=[base.year,work.medium].filter(Boolean).join(' · ');info.append(title,meta);card.append(frame,info);
+        if(work.description){const description=document.createElement('span');description.className='work-description';description.textContent=work.description;card.append(description);}
+        card.addEventListener('click',()=>openWork(index));gallery.append(card);
+      });
+    }
+    const lightbox=$('lightbox');
+    $('bio-zh').addEventListener('click',()=>setLanguage('zh'));
+    $('bio-ug').addEventListener('click',()=>setLanguage('ug'));
+    if(!biographies.zh)$('bio-zh').hidden=true;if(!biographies.ug)$('bio-ug').hidden=true;
+    if(!biographies.zh&&!biographies.ug){$('about').hidden=true;$('about-link').hidden=true;}
+    setLanguage(biographies.zh?'zh':'ug');
+    function showWork(index){current=(index+works.length)%works.length;const base=works[current],w=localizedWork(current);$('lightbox-number').textContent=`${current+1} / ${works.length}`;$('lightbox-img').src=base.image;$('lightbox-img').alt=language==='ug'?w.title:(w.alt||base.alt||w.title);$('lightbox-title').textContent=w.title;$('lightbox-detail').textContent=[base.year,w.medium,base.size,w.description].filter(Boolean).join(' · ');}
     function openWork(index){lastFocus=document.activeElement;showWork(index);lightbox.setAttribute('open','');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close').focus();}
     function closeWork(){lightbox.removeAttribute('open');lightbox.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus?.focus();}
     $('close').addEventListener('click',closeWork);$('prev').addEventListener('click',()=>showWork(current-1));$('next').addEventListener('click',()=>showWork(current+1));
