@@ -79,6 +79,8 @@
     /* Each drawing has its own mount and caption; wide originals keep their full composition. */
     .works-note{margin:-13px 0 35px;color:#7a8b83;font-size:13px;line-height:1.8}.gallery{align-items:start;gap:62px 30px}.work-card{width:100%;cursor:zoom-in}.work-image{display:grid;place-items:center;aspect-ratio:4/5;min-height:0;padding:clamp(14px,2vw,26px)}.work-card img{width:100%;height:100%;max-height:none;object-fit:contain;box-shadow:none}.work-card.wide{grid-column:span 2}.work-card.wide .work-image{aspect-ratio:16/10}.work-info{align-items:baseline}.work-title{line-height:1.45}.work-description{max-width:48ch;margin-top:11px}.work-card.wide .work-description{max-width:70ch}
     @media(max-width:620px){.works-note{margin:-5px 0 27px;font-size:12px}.gallery{gap:42px}.work-card.wide{grid-column:span 1}.work-card.wide .work-image{aspect-ratio:4/3}}
+    .bio-switch{display:inline-flex;gap:4px;margin:0 0 22px;padding:4px;border:1px solid #d7e1dd;border-radius:999px;background:#f7faf8}.bio-switch button{border:0;border-radius:999px;background:transparent;color:#71837d;padding:7px 13px;font-size:12px;line-height:1;transition:background .25s ease,color .25s ease,box-shadow .25s ease}.bio-switch button[aria-pressed="true"]{background:#fff;color:#365d56;box-shadow:0 4px 13px -8px #325b52}.about p#artist-bio[dir="rtl"]{font-family:"Noto Naskh Arabic","Geeza Pro","Arial",sans-serif;font-size:18px;line-height:2.15;text-align:right;letter-spacing:0}.about-copy.is-uyghur .about-kicker{letter-spacing:.12em}.about-copy.is-uyghur h2{font-family:"Noto Naskh Arabic","Geeza Pro",serif;line-height:1.45}
+    @media(max-width:620px){.bio-switch{margin-bottom:16px}.about p#artist-bio[dir="rtl"]{font-size:17px;line-height:2}}
   </style>
 </head>
 <body>
@@ -87,7 +89,7 @@
     <header class="topbar"><a class="brand" href="#top" id="brand">阿迪力·热西提</a><nav class="nav" aria-label="主导航"><a href="#works">作品</a><a href="#about" id="about-link">关于</a></nav></header>
     <main id="top">
       <section class="intro" aria-labelledby="site-title"><div class="hero-art" aria-hidden="true"><span class="art-field"></span><span class="art-outline"></span><span class="art-frame"></span><span class="art-index">NO. 001</span><span class="art-rule"></span><span class="hero-art-label">ADILI / ART PORTFOLIO</span></div><div class="intro-main"><p class="eyebrow">Selected Works · 阿迪力·热西提</p><h1 id="site-title"><span class="hero-line"><span>一个梦想家的</span></span><span class="hero-line"><span>作品集</span></span></h1><a class="intro-link" href="#works">走进作品 <span aria-hidden="true">→</span></a></div><div class="intro-aside"><p class="aside-index">ARTIST / 001</p><p id="intro-text">阿迪力·热西提的绘画作品。请放慢脚步，看见画面里的色彩与故事。</p></div></section>
-      <section class="about" id="about" aria-labelledby="about-title"><div class="about-copy"><p class="about-kicker">THE ARTIST / 画家</p><h2 id="about-title">关于画家</h2><p id="artist-bio"></p></div><div class="about-media" aria-label="画家照片"><figure class="about-photo about-photo-portrait"><img src="images/artist-portrait.jpg" alt="阿迪力·热西提的正面肖像" width="1280" height="1412" loading="lazy"><figcaption>阿迪力·热西提</figcaption></figure><figure class="about-photo about-photo-work"><img src="images/artist-at-work.jpg" alt="阿迪力·热西提坐在画架前作画" width="1280" height="2011" loading="lazy"><figcaption>创作时刻</figcaption></figure></div></section>
+      <section class="about" id="about" aria-labelledby="about-title"><div class="about-copy" id="about-copy"><p class="about-kicker" id="about-kicker">THE ARTIST / 画家</p><h2 id="about-title">关于画家</h2><div class="bio-switch" role="group" aria-label="个人简介语言"><button type="button" id="bio-zh" aria-pressed="true">中文</button><button type="button" id="bio-ug" aria-pressed="false" lang="ug" dir="rtl">ئۇيغۇرچە</button></div><p id="artist-bio"></p></div><div class="about-media" aria-label="画家照片"><figure class="about-photo about-photo-portrait"><img src="images/artist-portrait.jpg" alt="阿迪力·热西提的正面肖像" width="1280" height="1412" loading="lazy"><figcaption>阿迪力·热西提</figcaption></figure><figure class="about-photo about-photo-work"><img src="images/artist-at-work.jpg" alt="阿迪力·热西提坐在画架前作画" width="1280" height="2011" loading="lazy"><figcaption>创作时刻</figcaption></figure></div></section>
       <section id="works" aria-labelledby="works-title"><div class="section-heading"><h2 id="works-title">作品</h2><span class="count" id="work-count">0 幅</span></div><p class="works-note">每一幅都是独立作品。标题与文字为作品集展示暂拟，可随画家的原题和资料更新。</p><div class="gallery" id="gallery"></div></section>
     </main>
     <footer class="footer"><span id="copyright">© 阿迪力·热西提</span><span>一个梦想家的作品集</span></footer>
@@ -104,7 +106,17 @@
     const $=id=>document.getElementById(id);
     if(artist.name){$('brand').textContent=artist.name;$('copyright').textContent=`© ${artist.name}`;document.title=`${artist.name} · 作品集`;}
     if(artist.introduction)$('intro-text').textContent=artist.introduction;
-    if(artist.biography)$('artist-bio').textContent=artist.biography;else{$('about').hidden=true;$('about-link').hidden=true;}
+    const biographies={zh:artist.biography||'',ug:artist.biographyUyghur||''};
+    function setBioLanguage(language){
+      const isUyghur=language==='ug'&&biographies.ug;
+      $('artist-bio').textContent=isUyghur?biographies.ug:biographies.zh;
+      $('artist-bio').lang=isUyghur?'ug':'zh-CN';$('artist-bio').dir=isUyghur?'rtl':'ltr';
+      $('about-title').textContent=isUyghur?'رەسسام ھەققىدە':'关于画家';
+      $('about-kicker').textContent=isUyghur?'THE ARTIST / رەسسام':'THE ARTIST / 画家';
+      $('about-copy').classList.toggle('is-uyghur',Boolean(isUyghur));
+      $('bio-zh').setAttribute('aria-pressed',String(!isUyghur));$('bio-ug').setAttribute('aria-pressed',String(Boolean(isUyghur)));
+    }
+    if(biographies.zh||biographies.ug){setBioLanguage(biographies.zh?'zh':'ug');$('bio-zh').addEventListener('click',()=>setBioLanguage('zh'));$('bio-ug').addEventListener('click',()=>setBioLanguage('ug'));if(!biographies.zh)$('bio-zh').hidden=true;if(!biographies.ug)$('bio-ug').hidden=true;}else{$('about').hidden=true;$('about-link').hidden=true;}
     $('work-count').textContent=`${works.length} 幅`;
     const gallery=$('gallery');
     if(!works.length){const empty=document.createElement('div');empty.className='empty';empty.innerHTML='<div><span>作品即将在这里展出</span>阿迪力·热西提的画作，即将呈现。</div>';gallery.append(empty);}
