@@ -148,7 +148,7 @@
         if(document.documentElement.classList.contains('motion-ready'))card.classList.add('is-visible');
         card.type='button';card.setAttribute('aria-label',c.view(work.title));
         const frame=document.createElement('span');frame.className='work-image';
-        const img=document.createElement('img');img.src=base.image;img.alt=language==='ug'?work.title:(work.alt||base.alt||work.title);img.loading=index<3?'eager':'lazy';img.decoding='async';frame.append(img);
+        const img=document.createElement('img');img.src=base.image.replace('images/','images/thumbs/');img.alt=language==='ug'?work.title:(work.alt||base.alt||work.title);img.loading=index<2?'eager':'lazy';img.fetchPriority=index===0?'high':'auto';img.decoding='async';frame.append(img);
         const info=document.createElement('span');info.className='work-info';const title=document.createElement('span');title.className='work-title';title.textContent=work.title;
         const meta=document.createElement('span');meta.className='work-meta';meta.textContent=[base.year,work.medium].filter(Boolean).join(' · ');info.append(title,meta);card.append(frame,info);
         if(work.description){const description=document.createElement('span');description.className='work-description';description.textContent=work.description;card.append(description);}
